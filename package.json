@@ -1,6 +1,6 @@
 {
   "name": "webauthnjs-helper",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "repository": "git@github.com:amitsarangi/webauthnjs-helper.git",
   "homepage": "https://github.com/amitsarangi/webauthnjs-helper",
@@ -14,7 +14,8 @@
     "/src"
   ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "test"
   },
   "dependencies": {
     "base64url": "^3.0.1"
