@@ -1,6 +1,24 @@
 const {
   encodeAttestationOptions,
-  decodeAttestationOptions
+  decodeAttestationOptions,
+  encodeAttestationResponse,
+  decodeAttestationResponse
 } = require("./src/attestation");
 
-module.exports = { encodeAttestationOptions, decodeAttestationOptions };
+const {
+  encodeAssertionOptions,
+  decodeAssertionOptions,
+  encodeAssertionResponse,
+  decodeAssertionResponse
+} = require("./src/assertion");
+
+module.exports = {
+  encodeAttestationOptions,
+  decodeAttestationOptions,
+  encodeAttestationResponse,
+  decodeAttestationResponse,
+  encodeAssertionOptions,
+  decodeAssertionOptions,
+  encodeAssertionResponse,
+  decodeAssertionResponse
+};
