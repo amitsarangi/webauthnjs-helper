@@ -14,12 +14,32 @@ const bufferToBase64 = base64ToArrayBuffer.encode;
  */
 const base64ToBuffer = base64ToArrayBuffer.decode;
 
-const strToBase64 = str => {
-  return Buffer.from(`${str}`).toString("base64");
+/**
+ * ArrayBuffer to string.
+ * @param  {ArrayBuffer} buf the ArrayBuffer
+ * @return {String}
+ */
+
+const ab2str = buf => {
+  return String.fromCharCode.apply(null, new Uint8Array(buf));
 };
 
-const base64ToStr = b64str => {
-  return new Buffer(b64str, "base64").toString();
+/**
+ * String to ArrayBuffer
+ * @param  {String} str
+ * @return {ArrayBuffer}
+ */
+const str2ab = str => {
+  let stringToEncode = str;
+  if (typeof str !== "string") {
+    stringToEncode = String(stringToEncode);
+  }
+  const buf = new ArrayBuffer(stringToEncode.length); // 1 bytes for each char
+  const bufView = new Uint8Array(buf);
+  for (let i = 0, strLen = stringToEncode.length; i < strLen; i += 1) {
+    bufView[i] = stringToEncode.charCodeAt(i);
+  }
+  return bufView.buffer;
 };
 
 const isString = str => typeof str === "string";
@@ -29,8 +49,8 @@ const isArrayBuffer = obj => obj instanceof ArrayBuffer;
 module.exports = {
   bufferToBase64,
   base64ToBuffer,
-  strToBase64,
-  base64ToStr,
+  ab2str,
+  str2ab,
   isString,
   isNumber,
   isArrayBuffer
