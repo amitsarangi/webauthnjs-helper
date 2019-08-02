@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "test": "jest",
-    "prepublish": "test"
+    "prepublish": "yarn test"
   },
   "dependencies": {
     "base64url": "^3.0.1"
