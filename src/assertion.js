@@ -98,7 +98,9 @@ const encodeAssertionResponse = assertionResponse => {
       ),
       clientDataJSON: bufferToBase64(assertionResponse.response.clientDataJSON),
       signature: bufferToBase64(assertionResponse.response.signature),
-      userHandle: bufferToBase64(assertionResponse.response.userHandle)
+      userHandle: assertionResponse.response.userHandle
+        ? bufferToBase64(assertionResponse.response.userHandle)
+        : ""
     }
   };
 };
