@@ -8,7 +8,7 @@ The following functionalities are provided
 
 - Encodes AttestationOptions, AssertionOptions as JSON objects so that they can be sent through network from server. 
 
-- Decodes the received AttestationOptions, AssertionOptions so that it can be passed to `navigator.credentials.create` or `navigator.credentials.get` respoectively 
+- Decodes the received AttestationOptions, AssertionOptions so that it can be passed to `navigator.credentials.create` or `navigator.credentials.get` respectively 
 
 - Encodes AttestationResponse, AssertionResponse that we get from `navigator.credentials.create` or `navigator.credentials.get` as JSON objects so that they can be sent as JSON to the server for registration/verification.
 
